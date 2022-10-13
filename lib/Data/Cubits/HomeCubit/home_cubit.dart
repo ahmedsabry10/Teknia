@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
-import 'package:teknia/Screens/HomeScreens/alamlaa_screen.dart';
-import 'package:teknia/Screens/HomeScreens/alasnaf_screen.dart';
+import 'package:teknia/Cubits/HomeCubit/home_states.dart';
 import 'package:teknia/Screens/HomeScreens/date_screen.dart';
 import 'package:teknia/Screens/HomeScreens/mabiaat_screen.dart';
 import 'package:teknia/Screens/HomeScreens/moshtraiat.dart';
-import 'package:teknia/Shared/HomeCubit/home_states.dart';
+import 'package:teknia/Screens/HomeScreens/total_safe.dart';
 import 'package:teknia/Shared/Styles/icon_broken.dart';
 
 class AppCubit extends Cubit<AppStates> {
@@ -17,7 +15,7 @@ class AppCubit extends Cubit<AppStates> {
   List<Widget> screens = [
     SalesScreen(), //المبيعات
     purchasesScreen(),  // المشترياات
-    TypesScreen(), //الاصناف
+    TotalSafe(), //الاصناف
     DateScreen(), //العملاء
 
   ];

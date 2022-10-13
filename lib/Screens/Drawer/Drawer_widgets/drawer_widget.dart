@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:teknia/Screens/HomeScreens/Drawers_screens/almowrdin_screen.dart';
+import 'package:teknia/Screens/Drawer/Drawers_screens/alasnaf_screen.dart';
+import 'package:teknia/Screens/Drawer/Drawers_screens/almandobeen.dart';
+import 'package:teknia/Screens/Drawer/Drawers_screens/almowrdin_screen.dart';
 import 'package:teknia/Screens/HomeScreens/alamlaa_screen.dart';
-import 'package:teknia/Screens/HomeScreens/alasnaf_screen.dart';
-import 'package:teknia/Screens/HomeScreens/Drawers_screens/almandobeen.dart';
-import 'package:teknia/Screens/HomeScreens/home_screen.dart';
 import 'package:teknia/Screens/HomeScreens/mabiaat_screen.dart';
 import 'package:teknia/Screens/HomeScreens/moshtraiat.dart';
 import 'package:teknia/Shared/Components/reusable_components.dart';
@@ -19,6 +18,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       child: Material(
         color: Colors.white60,
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
