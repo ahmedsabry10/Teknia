@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:teknia/Screens/HomeScreens/Drawer/drawer_widget.dart';
-import 'package:teknia/Shared/Components/reusable_components.dart';
-import 'package:teknia/Shared/HomeCubit/home_cubit.dart';
-import 'package:teknia/Shared/HomeCubit/home_states.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_cubit.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_states.dart';
+import 'package:teknia/Data/Shared/Components/reusable_components.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Screens/AuthScreens/Login/login_screen.dart';
+import 'package:teknia/Screens/Drawer/Drawer_widgets/drawer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -40,6 +41,15 @@ class HomeScreen extends StatelessWidget {
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             );
           },),
+              actions: [
+                IconButton(
+                    onPressed: (){
+                      navigateAndFinish(context, LoginScreen());
+                    },
+                    icon: Icon(
+                      IconBroken.Logout
+                    ))
+              ],
 
 
             ),
@@ -55,68 +65,145 @@ class HomeScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        OutlinedButton(
+                        Expanded(
+                          child: TextFormField(
+                            controller: dateBeginController,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Should enter date';
+                              }
+                              return null;
+                            },
 
-                          onPressed: (){
-                            showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime.parse('2000-10-10'),
-                                lastDate:
-                                DateTime.parse('2100-10-10'))
-                                .then((value) {
-                              dateLastController.text =
-                                  DateFormat.yMMMd().format(value!);
-                            });
-                          },
-                          child: Text('${dateLastController.text}',
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                color: Colors.deepPurple
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.fromLTRB(
+                                  18.0, 10.0, 18.0, 10.0),
+                              labelText: 'الى تاريخ ',
+
+                              labelStyle:
+                              const TextStyle(
+                                fontStyle: FontStyle.italic,
+                              ),
+
+                              /*
+                              prefixIcon: const Icon(
+                                IconBroken.Calendar,
+                                color: Colors.deepPurple,
+                              ),
+
+                               */
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: const BorderSide(
+                                  color: Colors.deepPurple,
+                                  width: .5,
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: const BorderSide(
+                                  color: Colors.deepPurple,
+                                  width: .5,
+                                ),
+                              ),
                             ),
+
+                            onTap: () {
+                              showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime.parse('2000-10-10'),
+                                  lastDate:
+                                  DateTime.parse('2100-10-10'))
+                                  .then((value) {
+                                dateBeginController.text =
+                                    DateFormat.yMMMd().format(value!);
+                              });
+                            },
                           ),
                         ),
+
                         SizedBox(
                           width: 5.0,
                         ),
+
+                        /*
                         Text(
                           'الى',
                           style: TextStyle(
                               fontSize: 15.0
                           ),
                         ),
+
+                         */
                         SizedBox(
                           width: 10.0,
                         ),
-                        OutlinedButton(
+                        Expanded(
+                          child: TextFormField(
+                            controller: dateBeginController,
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
+                                return 'Should enter date';
+                              }
+                              return null;
+                            },
 
-                          onPressed: (){
-                            showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime.parse('2000-10-10'),
-                                lastDate:
-                                DateTime.parse('2100-10-10'))
-                                .then((value) {
-                              dateBeginController.text =
-                                  DateFormat.yMMMd().format(value!);
-                            });
-                          },
-                          child: Text(
-                            '${dateBeginController.text}',
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                color: Colors.deepPurple
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.fromLTRB(
+                                  18.0, 10.0, 18.0, 10.0),
+                              labelText: 'من تاريخ ',
+                              labelStyle:
+                              const TextStyle(fontStyle: FontStyle.italic),
+
+                              /*
+                              prefixIcon: const Icon(
+                                IconBroken.Calendar,
+                                color: Colors.deepPurple,
+                              ),
+
+                               */
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: const BorderSide(
+                                  color: Colors.deepPurple,
+                                  width: .5,
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: const BorderSide(
+                                  color: Colors.deepPurple,
+                                  width: .5,
+                                ),
+                              ),
                             ),
+
+                            onTap: () {
+                              showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime.parse('2000-10-10'),
+                                  lastDate:
+                                  DateTime.parse('2100-10-10'))
+                                  .then((value) {
+                                dateBeginController.text =
+                                    DateFormat.yMMMd().format(value!);
+                              });
+                            },
                           ),
-                        ),                 SizedBox(
+                        ),
+                        SizedBox(
                           width: 5.0,
                         ),
+                        /*
                         Text('من',
                           style: TextStyle(
                               fontSize: 15.0
                           ),
                         ),
+
+                         */
                       ],
                     ),
                     Container(

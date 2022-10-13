@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_cubit.dart';
 import 'package:teknia/Screens/AuthScreens/Login/login_screen.dart';
-import 'package:teknia/Shared/HomeCubit/home_cubit.dart';
 
 
 void main() {

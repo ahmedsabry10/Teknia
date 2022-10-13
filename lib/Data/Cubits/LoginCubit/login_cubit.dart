@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teknia/Cubits/LoginCubit/login_states.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Data/Cubits/LoginCubit/login_states.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
 
 class LoginCubit extends Cubit<LoginStates>{
   LoginCubit():super(LoginInitialState());

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teknia/Screens/HomeScreens/DetailsScreens/al3mla2_debts_details.dart';
-import 'package:teknia/Screens/HomeScreens/DetailsScreens/sales_details.dart';
+import 'package:teknia/Screens/DetailsScreens/al3mla2_debts_details.dart';
 import 'package:teknia/Screens/HomeScreens/home_screen.dart';
-import 'package:teknia/Shared/Components/reusable_components.dart';
-import 'package:teknia/Shared/HomeCubit/home_cubit.dart';
-import 'package:teknia/Shared/HomeCubit/home_states.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Data/Shared/Components/reusable_components.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_cubit.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_states.dart';
 
 class CustomerDebts extends StatelessWidget {
   CustomerDebts({Key? key}) : super(key: key);

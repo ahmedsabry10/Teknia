@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_cubit.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_states.dart';
+import 'package:teknia/Data/Shared/Components/reusable_components.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
+
 import 'package:teknia/Screens/HomeScreens/moshtraiat.dart';
-import 'package:teknia/Shared/Components/reusable_components.dart';
-import 'package:teknia/Shared/HomeCubit/home_cubit.dart';
-import 'package:teknia/Shared/HomeCubit/home_states.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
+
 
 class PurchaseDetails extends StatelessWidget {
   PurchaseDetails({Key? key}) : super(key: key);

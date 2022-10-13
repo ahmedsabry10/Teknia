@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teknia/Screens/HomeScreens/DetailsScreens/sales_details.dart';
+import 'package:teknia/Screens/DetailsScreens/sales_details.dart';
 import 'package:teknia/Screens/HomeScreens/home_screen.dart';
-import 'package:teknia/Shared/Components/reusable_components.dart';
-import 'package:teknia/Shared/HomeCubit/home_cubit.dart';
-import 'package:teknia/Shared/HomeCubit/home_states.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Data/Shared/Components/reusable_components.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_cubit.dart';
+import 'package:teknia/Data/Cubits/HomeCubit/home_states.dart';
 
 class SalesScreen extends StatelessWidget {
   SalesScreen({Key? key}) : super(key: key);
@@ -43,7 +43,80 @@ class SalesScreen extends StatelessWidget {
                     separatorBuilder: (context,index) => defaultLine(),
                     itemCount: 10
                 ),
-              )
+              ),
+              Card(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                elevation: 2.0,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 2.0,
+                ),
+                color: Colors.grey[200],
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Column(
+                    children: [
+                      // اسم الصنف
+                      Row(
+                        children: [
+                          Spacer(),
+                          Text(
+                            '77 ',
+                            style: TextStyle(
+                              color: Colors.deepPurple
+                          ),
+                          ),
+                          Text(
+                              ' اجمالى المبيعات '
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+
+                          //صافى سعر
+                          Text(
+                            '2500',
+                            style: TextStyle(
+                              color: Colors.deepPurple,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Expanded(
+                            child: Text(
+                                'صافى سعر '
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          //كميه
+                          Text(
+                            '50',
+                            style: TextStyle(
+                              color: Colors.deepPurple,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Text(
+                              'اجمالى خصم '
+                          ),
+
+
+
+
+
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
 
 
 
@@ -98,6 +171,7 @@ class SalesScreen extends StatelessWidget {
           ],
         ),
       ),
+
     ),
   );
 }

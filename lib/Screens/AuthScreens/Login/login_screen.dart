@@ -1,13 +1,13 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teknia/Data/Cubits/LoginCubit/login_cubit.dart';
+import 'package:teknia/Data/Cubits/LoginCubit/login_states.dart';
+import 'package:teknia/Data/Shared/Components/reusable_components.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
 import 'package:teknia/Screens/AuthScreens/Register/register_screen.dart';
 import 'package:teknia/Screens/HomeScreens/home_screen.dart';
 
-import 'package:teknia/Shared/Components/reusable_components.dart';
-import 'package:teknia/Shared/LoginCubit/login_cubit.dart';
-import 'package:teknia/Shared/LoginCubit/login_states.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {

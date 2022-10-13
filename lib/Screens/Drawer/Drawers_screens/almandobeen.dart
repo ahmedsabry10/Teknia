@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:teknia/Data/Shared/Components/reusable_components.dart';
+import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
 import 'package:teknia/Screens/HomeScreens/home_screen.dart';
-import 'package:teknia/Shared/Components/reusable_components.dart';
-import 'package:teknia/Shared/Styles/icon_broken.dart';
+
 
 class RepresentativeScreen extends StatefulWidget {
   const RepresentativeScreen({Key? key}) : super(key: key);
