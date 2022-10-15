@@ -48,7 +48,7 @@ class SalesScreen extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 2.0,
                 margin: const EdgeInsets.symmetric(
-                  horizontal: 2.0,
+                  horizontal: 5.0,
                 ),
                 color: Colors.grey[200],
                 child: Padding(
@@ -68,6 +68,8 @@ class SalesScreen extends StatelessWidget {
                           Text(
                               ' اجمالى المبيعات '
                           ),
+                          Spacer(),
+
                         ],
                       ),
                       Row(
@@ -116,6 +118,9 @@ class SalesScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 5.0,
+              )
 
 
 

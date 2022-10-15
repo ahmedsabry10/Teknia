@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:teknia/Data/Shared/Components/reusable_components.dart';
 import 'package:teknia/Data/Shared/Styles/icon_broken.dart';
+import 'package:teknia/Screens/AuthScreens/Login/login_screen.dart';
 import 'package:teknia/Screens/Drawer/Drawers_screens/alasnaf_screen.dart';
 import 'package:teknia/Screens/Drawer/Drawers_screens/almandobeen.dart';
 import 'package:teknia/Screens/Drawer/Drawers_screens/almowrdin_screen.dart';
@@ -62,6 +65,23 @@ class NavigationDrawerWidget extends StatelessWidget {
                       icon: IconBroken.Buy,
                       onClicked: () => selectedItem(context, 5),
                     ),
+                    const SizedBox(height: 16),
+                    defaultLine(),
+                    const SizedBox(height: 10),
+                    defaultLine(),
+                    const SizedBox(height: 16),
+
+                    buildMenuItem(
+                      text: 'تسجيل خروج',
+                      icon: IconBroken.Logout,
+                      onClicked: () => navigateAndFinish(context, LoginScreen()),
+                    ),
+
+                    buildMenuItem(
+                      text: 'اغلاق البرنامج',
+                      icon: IconBroken.Close_Square,
+                      onClicked: () => exit(0),
+                    ),
                   ],
                 ),
               ),
@@ -113,6 +133,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 5:
         navigateTo(context, purchasesScreen());
         break;
+
     }
   }
 }

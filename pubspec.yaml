@@ -47,6 +47,7 @@ dependencies:
   fluttertoast: ^8.0.9
   hexcolor:
   image_picker: ^0.8.5+3
+  animated_drawer: ^0.0.4
 
 dev_dependencies:
   flutter_test:

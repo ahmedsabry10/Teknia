@@ -206,6 +206,9 @@ class HomeScreen extends StatelessWidget {
                          */
                       ],
                     ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     Container(
                       color: Colors.white60,
                       child: GridView.count(
